@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public sealed partial class FacilityEncounter
 {
@@ -14,7 +14,7 @@ public sealed partial class FacilityEncounter
 
     private void OnGUI()
     {
-        if (!view || !liftDoor || Event.current.type != EventType.Repaint) return;
+        if (!view || !liftDoor) return;
         if (caption == null)
         {
             caption = MakeStyle(16, TextAnchor.MiddleLeft);
@@ -30,35 +30,29 @@ public sealed partial class FacilityEncounter
         GUI.matrix = Matrix4x4.Scale(new Vector3(scale, scale, 1));
         try
         {
+            if (presentation != Presentation.Playing)
+            {
+                DrawPresentation(w, h);
+                return;
+            }
+            if (Event.current.type != EventType.Repaint) return;
             DrawStatus(w, h);
-            if (PlayerAlive)
-            {
-                DrawEnemyHealth(w, h);
-                DrawCombat(w, h);
-            }
-            else
-            {
-                Fill(new Rect(0, 0, w, h), new Color(.015f, .026f, .029f, .82f));
-                var modal = new Rect(w * .5f - 218, h * .5f - 74, 436, 148);
-                PanelFrame(modal, finished ? HudMint : HudRed);
-                Text(new Rect(modal.x, modal.y + 22, modal.width, 42), finished ? "FACILITY CLEARED" : "SIGNAL LOST", title, HudText);
-                DrawPrompt(w * .5f, modal.y + 88, "Enter", "Restart from dispatch", HudMint);
-            }
+            DrawObjectiveMarkers(w, h);
+            DrawEnemyHealth(w, h);
+            DrawCombat(w, h);
         }
         finally { GUI.matrix = previous; }
     }
 
     private void DrawStatus(float w, float h)
     {
-        var floorCard = new Rect(22, 22, 322, 107);
+        var floorCard = new Rect(22, 22, 370, 145);
         PanelFrame(floorCard, HudMint);
-        Text(new Rect(38, 29, 274, 20), $"FACILITY  /  FLOOR {floor + 1:00}", caption, HudMint);
-        Text(new Rect(38, 46, 292, 35), FloorNames[floor], heading, HudText);
-        int remaining = 0;
-        foreach (FacilityCreature enemy in enemies)
-            if (enemy && enemy.Alive) remaining++;
-        string objective = !powered ? "Restore the power grid" : remaining == 0 ? "Proceed to the freight lift" : $"{remaining} active  /  {EnemyNames[floor]}";
-        Text(new Rect(38, 85, 292, 26), objective, caption, !powered ? HudAmber : HudMuted);
+        Text(new Rect(38, 29, 332, 20), $"FACILITY  /  FLOOR {floor + 1:00}", caption, HudMint);
+        Text(new Rect(38, 46, 332, 35), FloorNames[floor], heading, HudText);
+        Text(new Rect(38, 84, 332, 25), CurrentObjective(), caption, !powered ? HudAmber : HudMint);
+        Text(new Rect(38, 110, 332, 23), $"{RemainingEnemies()} threats  /  Power {(powered ? "online" : "offline")}", caption, HudMuted);
+        Text(new Rect(38, 136, 332, 22), "Floor-entry checkpoint  /  Esc to pause", MakeStyle(13, TextAnchor.MiddleLeft), HudMuted);
 
         var vitals = new Rect(22, h - 119, 230, 97);
         Color healthColor = health <= 30 ? HudRed : HudMint;
@@ -84,16 +78,6 @@ public sealed partial class FacilityEncounter
 
     private void DrawCombat(float w, float h)
     {
-        if (Time.time < hurtEnd)
-        {
-            Color flashColor = HudRed;
-            flashColor.a = Mathf.Clamp01((hurtEnd - Time.time) * 2.4f);
-            Fill(new Rect(0, 0, w, 4), flashColor);
-            Fill(new Rect(0, h - 4, w, 4), flashColor);
-            Fill(new Rect(0, 0, 4, h), flashColor);
-            Fill(new Rect(w - 4, 0, 4, h), flashColor);
-        }
-
         bool confirmed = Time.time < hitEnd || Time.time < objectHitEnd;
         Color reticle = Time.time < hitEnd ? HudRed : Time.time < objectHitEnd ? HudAmber : aimedProp ? HudMint : HudText;
         float gap = confirmed ? 7 : 5;
@@ -107,8 +91,8 @@ public sealed partial class FacilityEncounter
             Fill(new Rect(cx - .5f, cy + gap, 1, 4), reticle);
         }
 
-        if (!powered && Near(Panel)) DrawPrompt(cx, cy + 70, "E", "Restore power", HudAmber);
-        else if (NearLift()) DrawPrompt(cx, cy + 70, "E", "Freight lift", HudMint);
+        if (!powered && Near(Panel)) DrawPrompt(cx, cy + 70, "E", "Restore power at this panel", HudAmber);
+        else if (NearLift()) DrawPrompt(cx, cy + 70, "E", powered && Cleared() ? (floor == 3 ? "Extract and finish mission" : $"Take lift to Floor {floor + 2}") : (!powered ? "Lift locked - restore power" : "Lift locked - clear threats"), powered && Cleared() ? HudMint : HudAmber);
         else if (aimedProp) DrawPrompt(cx, cy + 70, "E", "Push cargo", HudMint);
         else if (wallClearance >= .72f)
             Text(new Rect(cx - 150, cy + 40, 300, 26), "WEAPON LOWERED", centered, HudMuted);
@@ -118,8 +102,8 @@ public sealed partial class FacilityEncounter
             float alpha = Mathf.Clamp01((messageEnd - Time.time) * 3);
             Color previous = GUI.color;
             GUI.color = new Color(1, 1, 1, alpha);
-            PanelFrame(new Rect(cx - 207, 143, 414, 37), Time.time < panelUse ? HudMint : HudAmber);
-            Text(new Rect(cx - 198, 144, 396, 35), message, centered, HudText);
+            PanelFrame(new Rect(cx - 260, 184, 520, 42), Time.time < panelUse ? HudMint : HudAmber);
+            Text(new Rect(cx - 250, 186, 500, 38), message, centered, HudText);
             GUI.color = previous;
         }
     }

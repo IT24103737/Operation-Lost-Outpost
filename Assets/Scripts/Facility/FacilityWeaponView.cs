@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -313,6 +313,8 @@ internal sealed class FacilityWeaponView
         Vector3 elbow = root.InverseTransformPoint(root.parent.TransformPoint(elbowInCamera));
         hand.Pose(grip, elbow, fingers, roll, curl);
     }
+
+    internal void SetVisible(bool visible) => root.gameObject.SetActive(visible);
 
     internal void Dispose()
     {

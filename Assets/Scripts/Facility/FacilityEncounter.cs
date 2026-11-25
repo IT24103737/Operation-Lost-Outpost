@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.SceneManagement;
 
 public sealed partial class FacilityEncounter : MonoBehaviour
 {
@@ -52,7 +51,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
     internal bool Distracted => Time.time < distractionEnd;
     internal Vector3 Panel => panel.position;
     internal IReadOnlyList<FacilityCreature> Enemies => enemies;
-    internal bool PlayerAlive => health > 0 && !finished;
+    internal bool PlayerAlive => health > 0 && !finished && presentation == Presentation.Playing;
     internal float Difficulty => 1 + floor * .22f;
     internal FacilityEffects Effects => effects;
     internal bool HeardShot(Vector3 listener, float distance, out Vector3 source)
@@ -113,6 +112,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         Raise("Warehouse_Expansion", 11f);
         Raise("Returns - Salvage and Quarantine", 11f);
         EnterFloor();
+        SetPresentation(Presentation.MainMenu);
     }
 
     private static void Raise(string rootName, float height)
@@ -135,6 +135,15 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         displayedHealth = 1;
         hurtEnd = 0;
         noiseEnd = 0;
+        reloadEnd = 0;
+        nextShot = 0;
+        muzzleEnd = 0;
+        hitEnd = 0;
+        objectHitEnd = 0;
+        distractionEnd = 0;
+        panelUse = 0;
+        flashlight.enabled = false;
+        flash.gameObject.SetActive(false);
         poweredLights.Clear();
         chargeCrates.Clear();
         temporaryFloor = new GameObject(FloorNames[floor] + " encounter").transform;
@@ -205,7 +214,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         Vector3 spawn = new Vector3(floor == 0 ? 0 : -1, y + 1.03f, centerZ - 11);
         playerBody.position = spawn;
         playerBody.rotation = Quaternion.identity;
-        playerBody.linearVelocity = Vector3.zero;
+        if (!playerBody.isKinematic) playerBody.linearVelocity = Vector3.zero;
         if (mouseLook)
             mouseLook.ResetLook();
         playerBody.transform.SetPositionAndRotation(spawn, Quaternion.identity);
@@ -215,7 +224,8 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         Box("Panel indicator", control + new Vector3(0, .43f, -.23f), new Vector3(.42f, .25f, .075f), hazard).SetParent(panel);
         Vector3 gate = new Vector3(0, y + 1.5f, centerZ + (floor < 2 ? 13.8f : 12.1f));
         liftDoor = Box("Freight lift shutter", gate + Vector3.forward * .45f, new Vector3(3.4f, 3, .26f), steel);
-        Box("Freight call station", gate + new Vector3(2.05f, -.8f, 0), new Vector3(.42f, 1.4f, .4f), hazard);
+        liftStation = Box("Freight call station", gate + new Vector3(2.05f, -.8f, 0), new Vector3(.42f, 1.4f, .4f), hazard);
+        BuildObjectiveStations();
         SetPower(floor == 0 || floor == 3);
         switch ((Species)floor)
         {
@@ -250,7 +260,10 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         Physics.SyncTransforms();
         foreach (FacilityCreature enemy in enemies)
             enemy.InitializePath();
-        Say(floor == 2 ? "Restore the lights. Watch the ceiling." : "Find the freight lift at the far end.");
+        UpdateObjectiveStations();
+        checkpointAmmo = ammo;
+        checkpointReserve = reserve;
+        Say("CHECKPOINT REACHED  /  " + FloorNames[floor]);
     }
 
     private void BuildServiceFloor(float y)
@@ -388,6 +401,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     private void OnDestroy()
     {
+        ReleasePresentation();
         weaponView?.Dispose();
         effects?.Dispose();
         if (brushedSteel) Destroy(brushedSteel);
@@ -435,7 +449,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
     {
         if (!powered || floor != 1) return;
         SetPower(false);
-        Say("GRID DRAINED  •  Freight lift locked");
+        Say("GRID DRAINED  Ã¢â‚¬Â¢  Freight lift locked");
     }
 
     internal bool HitCrate(Collider shape, Vector3 direction)
@@ -464,10 +478,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     private void EndRun()
     {
-        movement.enabled = false;
-        if (mouseLook) mouseLook.enabled = false;
-        playerBody.linearVelocity = Vector3.zero;
-        Cursor.lockState = CursorLockMode.None;
+        SetPresentation(finished ? Presentation.Outro : Presentation.Defeat);
     }
 
     private bool Cleared()
@@ -481,12 +492,15 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     private void Update()
     {
-        if (!PlayerAlive)
+        if (UpdatePresentation()) return;
+        if (!PlayerAlive) return;
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
-                SceneManager.LoadScene(gameObject.scene.name);
+            SetPresentation(Presentation.Paused);
             return;
         }
+        missionSeconds += Time.deltaTime;
+        UpdateObjectiveStations();
 
         if (Cursor.lockState != CursorLockMode.Locked)
         {
@@ -505,40 +519,14 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R)) Reload();
         if (Input.GetKeyDown(KeyCode.F)) flashlight.enabled = !flashlight.enabled;
-        if (Input.GetKeyDown(KeyCode.V)) Say("Weapon finish  •  " + weaponView.CycleSkin());
+        if (Input.GetKeyDown(KeyCode.V)) Say("Weapon finish  Ã¢â‚¬Â¢  " + weaponView.CycleSkin());
         if (Input.GetMouseButton(0) && Time.time >= nextShot && reloadEnd == 0 && !movement.IsSprinting && wallClearance < .72f)
         {
             if (ammo > 0) Shoot();
             else if (Input.GetMouseButtonDown(0)) Reload();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Near(Panel) && !powered)
-            {
-                SetPower(true);
-                panelUse = Time.time + .8f;
-                distractionEnd = Time.time + 2.4f;
-                Say("Grid restored");
-            }
-            else if (NearLift())
-            {
-                if (!powered || !Cleared()) Say(!powered ? "Restore grid power to unlock the lift" : "Clear the floor to unlock the lift");
-                else if (floor == 3)
-                {
-                    finished = true;
-                    EndRun();
-                }
-                else
-                {
-                    floor++;
-                    reserve += 45;
-                    EnterFloor();
-                }
-            }
-            else if (aimedProp)
-                PushAimedProp();
-        }
+        if (Input.GetKeyDown(KeyCode.E) && UseInteraction()) return;
         liftDoor.localPosition = Vector3.MoveTowards(liftDoor.localPosition,
             new Vector3(0, Elevation + (powered && Cleared() ? 4.55f : 1.5f), (floor == 1 ? 30 : 0) + (floor < 2 ? 14.25f : 12.55f)),
             Time.deltaTime * 4);
@@ -548,6 +536,40 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         view.fieldOfView = Mathf.Lerp(readyFov, readyFov * .72f, weaponView.AimBlend);
         if (mouseLook) mouseLook.AimSensitivity = Mathf.Lerp(1, .63f, weaponView.AimBlend);
         flash.gameObject.SetActive(Time.time < muzzleEnd);
+    }
+
+    private bool UseInteraction()
+    {
+        if (Near(Panel) && !powered)
+        {
+            SetPower(true);
+            panelUse = Time.time + .8f;
+            distractionEnd = Time.time + 2.4f;
+            Say("Grid restored");
+        }
+        else if (NearLift())
+        {
+            if (!powered || !Cleared()) Say(!powered ? "Restore grid power to unlock the lift" : "Clear the floor to unlock the lift");
+            else if (floor == 3)
+            {
+                finished = true;
+                UpdateObjectiveStations();
+                EndRun();
+                return true;
+            }
+            else
+            {
+                floor++;
+                reserve += 45;
+                EnterFloor();
+                BeginBriefing();
+                return true;
+            }
+        }
+        else if (aimedProp)
+            PushAimedProp();
+        UpdateObjectiveStations();
+        return false;
     }
 
     private void PushAimedProp()
@@ -640,7 +662,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
     {
         Vector3 callPosition = liftDoor.position;
         callPosition.y = Elevation + 1;
-        return Near(callPosition);
+        return Near(callPosition) || (liftStation && Near(liftStation.position));
     }
 
     private void Reload()
@@ -653,6 +675,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     private void Shoot()
     {
+        shotsFired++;
         ammo--;
         nextShot = Time.time + .105f;
         muzzleEnd = Time.time + .038f;
@@ -671,6 +694,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         if (enemy && enemy.Alive)
         {
             enemy.TakeHit(24);
+            if (!enemy.Alive) enemiesDefeated++;
             hitEnd = Time.time + .11f;
         }
         if (impact.collider.GetComponentInParent<FacilityShootableLight>() is FacilityShootableLight lamp)
