@@ -35,7 +35,7 @@ public sealed partial class FacilityEncounter
 
     private static readonly string[] ThreatAdvice =
     {
-        "BIOMASS GOLIATH  /  600 HP\nKeep moving. Bait its straight charge into a wall, then shoot while it is stunned. Crates can be smashed out of your way.",
+        "BIOMASS GOLIATH  /  600 HP\nBait a charge into a wall, then fire while it is stunned. Back away from its raised fist. Below half health it enrages and attacks faster.",
         "VOLT-LEECH  /  FOUR HOSTILES\nWatch for electrical attacks. Leeches evade your aim and drain the power panel. Eliminate all four before making your final power restoration.",
         "SHADOW STALKER  /  THREE HOSTILES\nCheck the ceiling. Looking at a Stalker slows its advance. Restore power to expose it and force it out of hiding.",
         "SWARMERS  /  SIX HOSTILES\nKeep space between you and the pack. Three together move faster, and they can slip under cargo barricades."

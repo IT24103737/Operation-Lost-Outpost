@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using Species = FacilityEncounter.Species;
 
 public sealed class FacilityCreature : MonoBehaviour
 {
-    private enum State { Patrol, Windup, Charge, Stunned, Evade, Discharge, Drain, Perch, Drop, Flee, PounceWindup, Pounce, Recover, Hunt, Dead }
+    private enum State { Patrol, Windup, Charge, Stunned, Evade, Discharge, Drain, Perch, Drop, Flee, PounceWindup, Pounce, Recover, Hunt, Dead, Roar, MeleeWindup, Melee }
 
     private FacilityEncounter encounter;
     private Species species;
@@ -17,6 +17,25 @@ public sealed class FacilityCreature : MonoBehaviour
     private float health, maximum, radius, height, deadline, nextAttack, nextPath, nextCall, nextEscape, walkPhase, lastHit, alertUntil, retreatUntil;
     private int patrolIndex;
     private Vector3 pounceOrigin;
+    private bool bossAwake, bossEnrageShown, bossAttackHit;
+    private float bossStateStarted, bossStuckTime, bossNextPropHit, bossNextFootstep, bossNextPain;
+    private Collider bossLastProp;
+    private int bossAvoidSide = 1;
+    internal bool IsEnraged => species == Species.Goliath && HealthFraction <= .5f;
+    internal bool BossAwake => bossAwake;
+    internal float CurrentHealth => health;
+    internal float MaximumHealth => maximum;
+    internal string BossIntent => state switch
+    {
+        State.Roar => IsEnraged ? "ENRAGED / FASTER ATTACKS" : "TARGET ACQUIRED",
+        State.Windup => "CHARGE INCOMING / DODGE SIDEWAYS",
+        State.Charge => "CHARGING",
+        State.MeleeWindup => "HEAVY STRIKE / GET BACK",
+        State.Melee => "HEAVY STRIKE",
+        State.Stunned => "STUNNED / OPEN FIRE",
+        State.Recover => "RECOVERING",
+        _ => IsEnraged ? "ENRAGED / HUNTING" : "HUNTING"
+    };
     private readonly List<Vector3> path = new();
     private readonly RaycastHit[] sweep = new RaycastHit[32];
 
@@ -32,7 +51,7 @@ public sealed class FacilityCreature : MonoBehaviour
         spawn = transform.position;
         (radius, height, maximum, state) = kind switch
         {
-            Species.Goliath => (.64f, 2.55f, 600f, State.Patrol),
+            Species.Goliath => (.72f, 2.9f, 600f, State.Patrol),
             Species.Leech => (.45f, .86f, 110f, State.Evade),
             Species.Stalker => (.55f, .94f, 155f, State.Perch),
             _ => (.23f, .40f, 44f, State.Hunt)
@@ -50,13 +69,30 @@ public sealed class FacilityCreature : MonoBehaviour
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.spatialBlend = 1;
         audioSource.minDistance = 2.5f;
-        audioSource.maxDistance = 24;
+        audioSource.maxDistance = kind == Species.Goliath ? 34 : 24;
         skin = new FacilityCreatureSkin(transform, kind, owner.Effects);
         nextCall = Time.time + Random.Range(1f, 4f);
     }
 
     internal void InitializePath()
     {
+        if (species == Species.Goliath)
+        {
+            // Cargo may have moved since the encounter was saved. Choose a free
+            // starting position before enabling movement rather than spawning in a rack.
+            if (Walkable(transform.position)) return;
+            for (int ring = 1; ring <= 5; ring++)
+            for (int i = 0; i < 16; i++)
+            {
+                float angle = i * Mathf.PI / 8;
+                Vector3 alternate = spawn + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * (ring * .7f);
+                if (!Within(alternate) || !Walkable(alternate)) continue;
+                spawn = transform.position = alternate;
+                return;
+            }
+            Debug.LogWarning("Goliath has no clear spawn space. Check the warehouse cargo layout.", this);
+            return;
+        }
         if (state != State.Perch && Physics.CheckSphere(transform.position + Vector3.up * .16f, .1f, ~0, QueryTriggerInteraction.Ignore))
         {
             // The check includes this creature, so only correct placements blocked by world geometry.
@@ -89,7 +125,18 @@ public sealed class FacilityCreature : MonoBehaviour
         if (!Alive) return;
         health = Mathf.Max(0, health - damage);
         lastHit = Time.time;
-        Call(.72f);
+        if (species == Species.Goliath)
+        {
+            lastKnownPlayer = encounter.Player;
+            alertUntil = Time.time + 12f;
+            nextPath = 0;
+        }
+        if (species != Species.Goliath) Call(.72f);
+        else if (Time.time >= bossNextPain)
+        {
+            bossNextPain = Time.time + .75f;
+            Call(.45f);
+        }
         if (health > 0)
         {
             if (state == State.Perch) StartDrop();
@@ -110,7 +157,10 @@ public sealed class FacilityCreature : MonoBehaviour
     {
         if (!Alive)
         {
-            skin.Animate(walkPhase, 0, 0, 0, Mathf.Clamp01((Time.time - deadline) * 2.7f), false, false);
+            float collapse = Mathf.Clamp01((Time.time - deadline) * 1.8f);
+            if (species == Species.Goliath)
+                skin.AnimateBrute(walkPhase, 0, FacilityCreatureSkin.BruteAction.Idle, 0, 0, collapse, IsEnraged);
+            else skin.Animate(walkPhase, 0, 0, 0, collapse, false, false);
             return;
         }
         if (!encounter.PlayerAlive) return;
@@ -131,82 +181,249 @@ public sealed class FacilityCreature : MonoBehaviour
         float speed = Vector3.Distance(previous, transform.position) / Mathf.Max(.001f, Time.deltaTime);
         walkPhase += Time.deltaTime * Mathf.Lerp(2, 14, Mathf.Clamp01(speed / 5));
         float windup = state == State.Windup || state == State.Discharge || state == State.PounceWindup ? 1 : 0;
-        skin.Animate(walkPhase, Mathf.Clamp01(speed / 2), windup,
-            Mathf.Clamp01(1 - (Time.time - lastHit) * 5), 0, Hidden, state == State.Perch);
+        if (species == Species.Goliath)
+        {
+            FacilityCreatureSkin.BruteAction action = state switch
+            {
+                State.Roar => FacilityCreatureSkin.BruteAction.Roar,
+                State.Windup => FacilityCreatureSkin.BruteAction.ChargeWindup,
+                State.Charge => FacilityCreatureSkin.BruteAction.Charge,
+                State.MeleeWindup => FacilityCreatureSkin.BruteAction.MeleeWindup,
+                State.Melee => FacilityCreatureSkin.BruteAction.Melee,
+                State.Stunned => FacilityCreatureSkin.BruteAction.Stunned,
+                State.Recover => FacilityCreatureSkin.BruteAction.Recover,
+                _ => FacilityCreatureSkin.BruteAction.Idle
+            };
+            float progress = Mathf.InverseLerp(bossStateStarted, deadline, Time.time);
+            skin.AnimateBrute(walkPhase, Mathf.Clamp01(speed / 3), action, progress,
+                Mathf.Clamp01(1 - (Time.time - lastHit) * 6), 0, IsEnraged);
+            if (speed > .6f && Time.time >= bossNextFootstep)
+            {
+                bossNextFootstep = Time.time + (state == State.Charge ? .22f : .48f);
+                audioSource.pitch = .66f;
+                audioSource.PlayOneShot(encounter.Effects.Footstep(FacilityEncounter.StepSurface.Concrete), .65f);
+            }
+        }
+        else
+            skin.Animate(walkPhase, Mathf.Clamp01(speed / 2), windup,
+                Mathf.Clamp01(1 - (Time.time - lastHit) * 5), 0, Hidden, state == State.Perch);
+    }
+
+    private void BeginBossState(State next, float duration)
+    {
+        state = next;
+        bossStateStarted = Time.time;
+        deadline = Time.time + duration;
+        bossAttackHit = false;
     }
 
     private void Goliath()
     {
         Vector3 toward = Flat(encounter.Player - transform.position);
+        float distance = toward.magnitude;
+        bool seesPlayer = TrackPlayer(distance, 28, 32);
+        if (seesPlayer || distance < 5f)
+        {
+            lastKnownPlayer = encounter.Player;
+            alertUntil = Time.time + 12;
+        }
+
         switch (state)
         {
+            case State.Roar:
+                Turn(toward, 3);
+                if (Time.time >= deadline) BeginBossState(State.Hunt, 0);
+                return;
             case State.Windup:
-                Turn(chargeDirection, 13);
+                // Aim during the first part of the tell, then commit to a straight
+                // charge so the player can dodge it deliberately.
+                if (Mathf.InverseLerp(bossStateStarted, deadline, Time.time) < .52f)
+                    chargeDirection = toward.normalized;
+                Turn(chargeDirection, 8);
                 if (Time.time >= deadline)
                 {
-                    state = State.Charge;
-                    deadline = Time.time + 1.8f;
+                    BeginBossState(State.Charge, IsEnraged ? 1.25f : 1.45f);
+                    bossLastProp = null;
+                    Call(1);
                 }
                 return;
             case State.Charge:
-                if (Time.time >= deadline)
-                {
-                    Stun(.65f);
-                    return;
-                }
-                float stride = 13 * Time.deltaTime;
-                if (toward.magnitude < 1.33f && Vector3.Dot(chargeDirection, toward.normalized) > .15f &&
+                BossCharge();
+                return;
+            case State.MeleeWindup:
+                if (Mathf.InverseLerp(bossStateStarted, deadline, Time.time) < .55f)
+                    chargeDirection = toward.normalized;
+                Turn(chargeDirection, 8);
+                if (Time.time >= deadline) BeginBossState(State.Melee, .32f);
+                return;
+            case State.Melee:
+                // The strike has a short forward step, a limited arc, and one hit.
+                if (distance > 1.5f)
+                    Step(chargeDirection * Mathf.Min(.7f, distance - 1.5f), IsEnraged ? 3.5f : 2.6f);
+                toward = Flat(encounter.Player - transform.position);
+                if (!bossAttackHit && toward.magnitude < 2.45f &&
+                    Vector3.Dot(chargeDirection, toward.normalized) > .25f &&
+                    Mathf.Abs(encounter.Player.y - transform.position.y - 1) < 1.25f &&
                     VisibleFrom(encounter.View.transform.position))
                 {
-                    encounter.Hurt(37);
-                    Stun(.9f);
+                    bossAttackHit = true;
+                    encounter.Hurt(IsEnraged ? 34 : 28);
+                    encounter.Effects.PropImpact(encounter.Player, false);
                 }
-                else if (Obstacle(transform.position, chargeDirection, stride + .11f, out Collider shape, true))
+                if (Time.time >= deadline)
                 {
-                    if (!encounter.HitCrate(shape, chargeDirection))
-                        Stun(2.6f);
-                    else
-                        transform.position += chargeDirection * stride;
+                    BeginBossState(State.Recover, IsEnraged ? .48f : .72f);
+                    nextAttack = deadline + .16f;
                 }
-                else
-                    transform.position += chargeDirection * stride;
                 return;
             case State.Stunned:
-                if (Time.time >= deadline) state = State.Patrol;
+            case State.Recover:
+                if (Time.time >= deadline)
+                {
+                    BeginBossState(State.Hunt, 0);
+                    nextPath = 0;
+                }
                 return;
         }
-        bool seesPlayer = TrackPlayer(toward.magnitude, 19, 19);
-        if (seesPlayer && Time.time >= nextAttack)
+
+        if ((!bossAwake && Time.time < alertUntil) || (IsEnraged && !bossEnrageShown))
         {
-            state = State.Windup;
-            chargeDirection = toward.normalized;
-            deadline = Time.time + .83f;
-            Call(.95f);
-            return;
-        }
-        if (Time.time < alertUntil && Flat(lastKnownPlayer - transform.position).magnitude > 1.05f)
-        {
-            Navigate(lastKnownPlayer, seesPlayer ? 2.4f : 1.9f);
+            bossAwake = true;
+            bossEnrageShown |= IsEnraged;
+            BeginBossState(State.Roar, IsEnraged ? .9f : 1.05f);
+            Call(1);
             return;
         }
 
-        Vector3 waypoint = patrolIndex switch
+        if (Time.time < alertUntil)
         {
-            0 => new Vector3(-3, encounter.Elevation, -8),
-            1 => new Vector3(4, encounter.Elevation, 0),
-            _ => new Vector3(-2.7f, encounter.Elevation, 10)
+            if (seesPlayer && distance < 2.25f && Time.time >= nextAttack)
+            {
+                chargeDirection = toward.normalized;
+                BeginBossState(State.MeleeWindup, IsEnraged ? .44f : .67f);
+                Call(.78f);
+                return;
+            }
+            if (seesPlayer && distance < 1.7f)
+            {
+                Turn(toward, 6);
+                return;
+            }
+            bool clearChargeLane = !Obstacle(transform.position, toward.normalized, distance, out Collider barrier) ||
+                barrier.GetComponentInParent<FacilityShootableProp>();
+            if (seesPlayer && distance > 5 && distance < 17 && clearChargeLane && Time.time >= nextAttack)
+            {
+                chargeDirection = toward.normalized;
+                BeginBossState(State.Windup, IsEnraged ? .68f : .95f);
+                Call(.9f);
+                return;
+            }
+            Vector3 target = lastKnownPlayer;
+            if (!seesPlayer && Flat(target - transform.position).magnitude < 1)
+            {
+                // Search beyond the last seen position instead of stopping there.
+                float angle = patrolIndex * Mathf.PI * .5f;
+                target += new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle)) * 3;
+                if (Flat(target - transform.position).magnitude < 1.1f || !Within(target))
+                    patrolIndex = (patrolIndex + 1) % 4;
+            }
+            BossNavigate(target, IsEnraged ? 3.65f : 2.8f);
+            return;
+        }
+
+        Vector3 waypoint = (patrolIndex % 3) switch
+        {
+            0 => new Vector3(0, encounter.Elevation, -8),
+            1 => new Vector3(2, encounter.Elevation, 0),
+            _ => new Vector3(-1, encounter.Elevation, 10)
         };
-        Navigate(waypoint, 1.45f);
-        if (Vector3.Distance(transform.position, waypoint) < 1) patrolIndex = (patrolIndex + 1) % 3;
+        BossNavigate(waypoint, 1.8f);
+        if (Flat(transform.position - waypoint).magnitude < 1.1f) patrolIndex++;
+    }
+
+    private void BossCharge()
+    {
+        if (Time.time >= deadline)
+        {
+            BeginBossState(State.Recover, .8f);
+            nextAttack = deadline + .5f;
+            return;
+        }
+        float stride = (IsEnraged ? 13 : 11) * Time.deltaTime;
+        if (!Within(transform.position + chargeDirection * stride))
+        {
+            Stun(IsEnraged ? 1.6f : 2.2f);
+            return;
+        }
+        if (Obstacle(transform.position, chargeDirection, stride + .08f, out Collider shape, true))
+        {
+            if (shape.GetComponentInParent<PlayerMovement>())
+            {
+                encounter.Hurt(IsEnraged ? 43 : 37);
+                BeginBossState(State.Recover, .85f);
+                nextAttack = deadline + .35f;
+            }
+            else if (shape.GetComponentInParent<FacilityShootableProp>())
+            {
+                if (shape != bossLastProp || Time.time >= bossNextPropHit)
+                {
+                    bossLastProp = shape;
+                    bossNextPropHit = Time.time + .4f;
+                    encounter.HitCrate(shape, chargeDirection);
+                }
+            }
+            else Stun(IsEnraged ? 1.6f : 2.2f);
+            return;
+        }
+        transform.position += chargeDirection * stride;
+    }
+
+    private void BossNavigate(Vector3 target, float speed)
+    {
+        Vector3 before = transform.position;
+        Vector3 direction = Flat(target - before).normalized;
+        if (Time.time >= bossNextPropHit && Obstacle(before, direction, 1.05f, out Collider cargo) &&
+            cargo.GetComponentInParent<FacilityShootableProp>())
+        {
+            encounter.HitCrate(cargo, direction);
+            bossNextPropHit = Time.time + .7f;
+            nextPath = 0;
+        }
+        Navigate(target, speed);
+        if ((transform.position - before).sqrMagnitude > .00001f)
+        {
+            bossStuckTime = 0;
+            return;
+        }
+        bossStuckTime += Time.deltaTime;
+        if (bossStuckTime < .55f) return;
+        // Try both sides of a blocked route using collision-checked steps.
+        for (int i = 0; i < 4; i++)
+        {
+            float angle = (i % 2 == 0 ? bossAvoidSide : -bossAvoidSide) * (i < 2 ? 60 : 105);
+            Vector3 escape = Quaternion.Euler(0, angle, 0) * direction;
+            if (!Within(before + escape) || !Walkable(before + escape) ||
+                Obstacle(before, escape, 1, out _)) continue;
+            Step(escape, speed);
+            nextPath = 0;
+            break;
+        }
+        if (bossStuckTime > 1.8f)
+        {
+            bossAvoidSide *= -1;
+            patrolIndex++;
+            bossStuckTime = .6f;
+            nextPath = 0;
+        }
     }
 
     private void Stun(float duration)
     {
-        state = State.Stunned;
-        deadline = Time.time + duration;
-        nextAttack = deadline + .7f;
+        BeginBossState(State.Stunned, duration);
+        nextAttack = deadline + .6f;
         nextPath = 0;
-        Call(.65f);
+        encounter.Effects.PropImpact(transform.position + transform.forward, true);
+        Call(.8f);
     }
 
     private void Leech()
@@ -447,7 +664,7 @@ public sealed class FacilityCreature : MonoBehaviour
 
     private void Call(float volume)
     {
-        audioSource.pitch = Random.Range(.87f, 1.14f);
+        audioSource.pitch = species == Species.Goliath ? Random.Range(.66f, .84f) : Random.Range(.87f, 1.14f);
         audioSource.PlayOneShot(encounter.Effects.Voice(species), volume);
     }
 
@@ -532,7 +749,7 @@ public sealed class FacilityCreature : MonoBehaviour
     private void FindPath(Vector3 target)
     {
         path.Clear();
-        const float spacing = 1.25f;
+        float spacing = species == Species.Goliath ? .85f : 1.25f;
         Vector2Int Cell(Vector3 point) => new(Mathf.RoundToInt(point.x / spacing), Mathf.RoundToInt(point.z / spacing));
         Vector3 World(Vector2Int cell) => new(cell.x * spacing, encounter.Elevation, cell.y * spacing);
         Vector2Int start = Cell(transform.position), goal = Cell(target), best = start;
@@ -541,7 +758,8 @@ public sealed class FacilityCreature : MonoBehaviour
         var costs = new Dictionary<Vector2Int, int> { [start] = 0 };
         var blocked = new HashSet<Vector2Int>();
 
-        for (int iteration = 0; iteration < 240 && open.Count > 0; iteration++)
+        int searchBudget = species == Species.Goliath ? 720 : 240;
+        for (int iteration = 0; iteration < searchBudget && open.Count > 0; iteration++)
         {
             int index = 0;
             float score = float.PositiveInfinity;

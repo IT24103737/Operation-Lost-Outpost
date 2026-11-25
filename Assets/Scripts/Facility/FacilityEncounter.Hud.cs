@@ -42,6 +42,7 @@ public sealed partial class FacilityEncounter
             DrawStatus(w, h);
             DrawObjectiveMarkers(w, h);
             DrawEnemyHealth(w, h);
+            DrawBossStatus(w);
             DrawCombat(w, h);
         }
         finally { GUI.matrix = previous; }
@@ -109,6 +110,21 @@ public sealed partial class FacilityEncounter
             Text(new Rect(cx - 250, 186, 500, 38), message, centered, HudText);
             GUI.color = previous;
         }
+    }
+
+    private void DrawBossStatus(float w)
+    {
+        if (floor != 0 || enemies.Count == 0) return;
+        FacilityCreature boss = enemies[0];
+        if (!boss || !boss.Alive || !boss.BossAwake) return;
+        Color accent = boss.IsEnraged ? HudAmber : HudRed;
+        var card = new Rect(w - 422, 22, 400, 100);
+        PanelFrame(card, accent);
+        Text(new Rect(card.x + 16, card.y + 7, 368, 27), "BIOMASS GOLIATH", heading, HudText);
+        Text(new Rect(card.x + 16, card.y + 36, 368, 22), boss.BossIntent, caption, accent);
+        Meter(new Rect(card.x + 16, card.y + 67, 285, 10), boss.HealthFraction, accent);
+        Text(new Rect(card.x + 305, card.y + 58, 84, 26), $"{Mathf.CeilToInt(boss.CurrentHealth)} HP", caption, HudText);
+        Text(new Rect(card.x + 16, card.y + 79, 368, 19), boss.IsEnraged ? "PHASE 2 / ENRAGED" : "PHASE 1 / CONTAINMENT BRUTE", MakeStyle(12, TextAnchor.MiddleLeft), HudMuted);
     }
 
     private void DrawEnemyHealth(float w, float h)

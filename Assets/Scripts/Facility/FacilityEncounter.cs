@@ -457,15 +457,17 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     internal bool HitCrate(Collider shape, Vector3 direction)
     {
-        if (!chargeCrates.Remove(shape.transform)) return false;
-        FacilityShootableProp prop = shape.GetComponent<FacilityShootableProp>();
+        FacilityShootableProp prop = shape.GetComponentInParent<FacilityShootableProp>();
         if (!prop) return false;
-        if (Random.value < .40f)
+        chargeCrates.Remove(prop.transform);
+        effects.PropImpact(shape.bounds.center, prop.FootstepSurface == StepSurface.Steel);
+        if (prop.FootstepSurface is StepSurface.Wood or StepSurface.Cardboard)
             prop.Break(effects, shape.bounds.center, direction);
         else
         {
-            prop.Push(shape.bounds.center, (direction + Vector3.up * .14f) * 10);
-            var impact = shape.gameObject.AddComponent<FacilityCrateImpact>();
+            prop.Push(shape.bounds.center, (direction + Vector3.up * .16f) * 9);
+            var impact = prop.GetComponent<FacilityCrateImpact>();
+            if (!impact) impact = prop.gameObject.AddComponent<FacilityCrateImpact>();
             impact.Setup(this);
         }
         return true;
