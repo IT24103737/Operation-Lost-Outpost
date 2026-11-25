@@ -32,10 +32,13 @@ public sealed partial class FacilityEncounter
         {
             if (presentation != Presentation.Playing)
             {
+                if (presentation == Presentation.Defeat && Event.current.type == EventType.Repaint)
+                    DrawDamageFeedback(w, h);
                 DrawPresentation(w, h);
                 return;
             }
             if (Event.current.type != EventType.Repaint) return;
+            DrawDamageFeedback(w, h);
             DrawStatus(w, h);
             DrawObjectiveMarkers(w, h);
             DrawEnemyHealth(w, h);

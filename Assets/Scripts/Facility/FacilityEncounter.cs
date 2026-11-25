@@ -84,6 +84,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         effects = new FacilityEffects();
         texturedConcrete = effects.WeatheredConcrete(concrete);
         BuildEnvironmentFinishes();
+        InitializeDamageFeedback();
         playerAudio = view.gameObject.AddComponent<AudioSource>();
         footstepAudio = view.gameObject.AddComponent<AudioSource>();
         roomAudio = view.gameObject.AddComponent<AudioSource>();
@@ -134,6 +135,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
         health = 100;
         displayedHealth = 1;
         hurtEnd = 0;
+        ResetDamageFeedback();
         noiseEnd = 0;
         reloadEnd = 0;
         nextShot = 0;
@@ -402,6 +404,7 @@ public sealed partial class FacilityEncounter : MonoBehaviour
     private void OnDestroy()
     {
         ReleasePresentation();
+        DisposeDamageFeedback();
         weaponView?.Dispose();
         effects?.Dispose();
         if (brushedSteel) Destroy(brushedSteel);
@@ -470,9 +473,12 @@ public sealed partial class FacilityEncounter : MonoBehaviour
 
     internal void Hurt(int damage)
     {
-        if (!PlayerAlive || Time.time < hurtEnd - .1f) return;
+        if (!PlayerAlive || damage <= 0 || Time.time < hurtEnd - .1f) return;
+        int previousHealth = health;
         health = Mathf.Max(0, health - Mathf.RoundToInt(damage * Difficulty));
+        if (health == previousHealth) return;
         hurtEnd = Time.time + .26f;
+        TriggerDamageFeedback(previousHealth - health);
         if (health == 0) EndRun();
     }
 
