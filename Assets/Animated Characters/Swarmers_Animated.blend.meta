@@ -1,0 +1,861 @@
+fileFormatVersion: 2
+guid: de775cee23ef952409c1245f0de8a054
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Swarmers_Animated(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: 01 | deep ribcage
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.27899998, z: -0.086399995}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: 02 | dark dorsal hump
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.3474, z: -0.1278}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: 03 | muscular shoulder girdle
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.28440005, z: 0.089999996}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: 04 | compressed pelvic haunches
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.26459998, z: -0.27899998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: 05 | narrow throat
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.2556, z: 0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: 06 | pale underside
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.21420002, z: -0.0756}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 00
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.12589973, y: 0.31858292, z: -0.2446446}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 01
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.12325061, y: 0.30477804, z: -0.24035634}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 02
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.10695933, y: 0.2946549, z: -0.10313029}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 03
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.103769906, y: 0.31084922, z: -0.0057533113}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 04
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.13275312, y: 0.32640103, z: -0.14820912}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 05
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.13802132, y: 0.32882133, z: -0.2016732}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 06
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.12117751, y: 0.3496001, z: 0.010940148}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 07
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.11347231, y: 0.36095703, z: -0.019123651}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 08
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.12915505, y: 0.2985582, z: -0.21036078}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 09
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.107841305, y: 0.32360455, z: -0.10931055}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 10
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.09571405, y: 0.36400756, z: -0.1438892}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 11
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.13890573, y: 0.34109467, z: 0.006517929}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 12
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.13266513, y: 0.35413963, z: -0.22941695}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 13
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.11628909, y: 0.33945265, z: -0.036752306}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dermal abrasion | 14
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.14168128, y: 0.35777003, z: -0.20157221}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dorsal injury | healed slash 00
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dorsal injury | healed slash 01
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dorsal injury | healed slash 02
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dorsal injury | healed slash 03
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Dorsal injury | healed slash 04
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Ear | L outer cartilage
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.16379999, y: 0.44640002, z: 0.2052}
+      rotation: {x: -0.70667374, y: 0.15085942, z: -0.024743661, w: 0.69082665}
+      scale: {x: 1.8, y: 1.8000002, z: 1.7999998}
+    - name: Ear | L recessed membrane
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1674, y: 0.45179996, z: 0.23040001}
+      rotation: {x: -0.70667374, y: 0.15085942, z: -0.024743661, w: 0.69082665}
+      scale: {x: 1.8, y: 1.8000002, z: 1.7999998}
+    - name: Ear | R outer cartilage
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.16379999, y: 0.44640002, z: 0.2052}
+      rotation: {x: -0.70667374, y: -0.15085942, z: 0.024743661, w: 0.69082665}
+      scale: {x: 1.8, y: 1.8000002, z: 1.7999998}
+    - name: Ear | R recessed membrane
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1674, y: 0.45179996, z: 0.23040001}
+      rotation: {x: -0.70667374, y: -0.15085942, z: 0.024743661, w: 0.69082665}
+      scale: {x: 1.8, y: 1.8000002, z: 1.7999998}
+    - name: Eye | L hard specular point
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.12959999, y: 0.3744, z: 0.35819998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eye | L sunken socket
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.107999995, y: 0.35999998, z: 0.32579997}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eye | L wet black eye
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1224, y: 0.36540002, z: 0.34379998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eye | R hard specular point
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.12959999, y: 0.3744, z: 0.35819998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eye | R sunken socket
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.107999995, y: 0.35999998, z: 0.32579997}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eye | R wet black eye
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1224, y: 0.36540002, z: 0.34379998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eyebrow | L scowl ridge
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.11699999, y: 0.39780003, z: 0.33300003}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Eyebrow | R scowl ridge
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.11699999, y: 0.39780003, z: 0.33300003}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Face | left cheek
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.089999996, y: 0.3042, z: 0.31680003}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Face | right cheek
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.089999996, y: 0.3042, z: 0.31680003}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | broad predatory paw
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.17999999, y: 0.044999998, z: 0.1674}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | exposed joint
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.189, y: 0.14940001, z: 0.044999998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | powerful lower leg
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1845, y: 0.1035, z: 0.0936}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | sharp claw -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | sharp claw 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | sharp claw 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | toe -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.20879999, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | toe 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.17999999, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | toe 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1512, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_L | upper joint muscle
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.15750001, y: 0.22409998, z: 0.0675}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | broad predatory paw
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.17999999, y: 0.044999998, z: 0.1674}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | exposed joint
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.189, y: 0.14940001, z: 0.044999998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | powerful lower leg
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1845, y: 0.1035, z: 0.0936}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | sharp claw -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | sharp claw 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | sharp claw 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | toe -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1512, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | toe 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.17999999, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | toe 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.20879999, y: 0.034199998, z: 0.21420002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Fore_R | upper joint muscle
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.15750001, y: 0.22409998, z: 0.0675}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Head | expanded mutated cranium
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.33300003, z: 0.23219998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Head | raised forehead
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.4014, z: 0.288}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | broad predatory paw
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.17999999, y: 0.044999998, z: -0.22320001}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | exposed joint
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.189, y: 0.14940001, z: -0.35639998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | powerful lower leg
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1845, y: 0.1035, z: -0.3024}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | sharp claw -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | sharp claw 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | sharp claw 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | toe -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.20879999, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | toe 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.17999999, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | toe 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1512, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_L | upper joint muscle
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.1521, y: 0.20610002, z: -0.3204}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | broad predatory paw
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.17999999, y: 0.044999998, z: -0.22320001}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | exposed joint
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.189, y: 0.14940001, z: -0.35639998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | powerful lower leg
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1845, y: 0.1035, z: -0.3024}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | sharp claw -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | sharp claw 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | sharp claw 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | toe -1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1512, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | toe 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.17999999, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | toe 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.20879999, y: 0.034199998, z: -0.17639999}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Hind_R | upper joint muscle
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.1521, y: 0.20610002, z: -0.3204}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Jaw | projecting lower mandible
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.21239999, z: 0.37980002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Mouth | open black interior
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.2376, z: 0.44640002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Muzzle | left jowl
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.043199997, y: 0.27719998, z: 0.43559998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Muzzle | right jowl
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.043199997, y: 0.27719998, z: 0.43559998}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Muzzle | tapered bridge
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.3024, z: 0.38160002}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Nose | flattened black-pink snout
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0.3096, z: 0.4824}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Nostril -0.011
+      parentName: Swarmers_Animated(Clone)
+      position: {x: 0.019800002, y: 0.3204, z: 0.50939995}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Nostril 0.011
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.019800002, y: 0.3204, z: 0.50939995}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: RIG | Swarmers_Quadruped
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Root
+      parentName: RIG | Swarmers_Quadruped
+      position: {x: -0, y: 0.004, z: 0.04}
+      rotation: {x: 0.83026445, y: -0, z: -0, w: 0.55736965}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Root
+      position: {x: -0, y: 0.11000001, z: -0.13}
+      rotation: {x: 0.020636026, y: -0.022853345, z: 0.0071603055, w: 0.9995002}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: Spine
+      position: {x: -8.1490725e-10, y: 0.19226022, z: -0.000000003655714}
+      rotation: {x: -0.10064821, y: 7.313093e-11, z: -0.0000000010128635, w: 0.9949221}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Head
+      parentName: Neck
+      position: {x: -8.731149e-11, y: 0.0557853, z: -0.000000026680937}
+      rotation: {x: 0.11772514, y: -4.1030687e-10, z: -3.6085024e-10, w: 0.9930462}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: Jaw
+      parentName: Head
+      position: {x: 7.566996e-10, y: 0.06559343, z: 0.04751319}
+      rotation: {x: 0.09010411, y: -1.4611348e-10, z: -7.3604656e-10, w: 0.99593234}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Jaw_end
+      parentName: Jaw
+      position: {x: -0, y: 0.070576206, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fore_L_Upper
+      parentName: Spine
+      position: {x: 0.06999999, y: 0.18058854, z: -0.0066160327}
+      rotation: {x: 0.87711746, y: 0.23364232, z: -0.026658555, w: 0.41876683}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Fore_L_Lower
+      parentName: Fore_L_Upper
+      position: {x: 0.000000009080395, y: 0.093482606, z: -4.656613e-10}
+      rotation: {x: -0.5933947, y: -0.280302, z: 0.13630639, w: 0.7421146}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Fore_L_Paw
+      parentName: Fore_L_Lower
+      position: {x: 0.0000000015133992, y: 0.0744446, z: 0.000000007450581}
+      rotation: {x: -0.3069126, y: 0.09041554, z: -0.0061558187, w: 0.9474132}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Fore_L_Paw_end
+      parentName: Fore_L_Paw
+      position: {x: -0, y: 0.040792156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hind_L_Upper
+      parentName: Spine
+      position: {x: 0.063999996, y: -0.028170146, z: 0.002538235}
+      rotation: {x: 0.4755177, y: -0.45854792, z: 0.5159985, w: 0.54530936}
+      scale: {x: 0.9999998, y: 0.9999997, z: 0.99999976}
+    - name: Hind_L_Lower
+      parentName: Hind_L_Upper
+      position: {x: -9.313226e-10, y: 0.08514692, z: 0.000000013038516}
+      rotation: {x: -0.006399721, y: -0.40862364, z: 0.0017267764, w: 0.91267896}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Hind_L_Paw
+      parentName: Hind_L_Lower
+      position: {x: -0.0000000027939677, y: 0.078905016, z: 0.0000000012805685}
+      rotation: {x: -0.22272089, y: 0.09077485, z: -0.011813605, w: 0.970575}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hind_L_Paw_end
+      parentName: Hind_L_Paw
+      position: {x: -0, y: 0.040792156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fore_R_Upper
+      parentName: Spine
+      position: {x: -0.07000001, y: 0.18058853, z: -0.0066160234}
+      rotation: {x: 0.7277116, y: -0.2319395, z: -0.038774725, w: 0.6443109}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fore_R_Lower
+      parentName: Fore_R_Upper
+      position: {x: -0, y: 0.093482606, z: -0.000000007872586}
+      rotation: {x: -0.52921504, y: 0.2679131, z: -0.15928341, w: 0.789166}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Fore_R_Paw
+      parentName: Fore_R_Lower
+      position: {x: 0.0000000034924597, y: 0.0744446, z: 0.0000000018626451}
+      rotation: {x: -0.24816534, y: -0.08986703, z: 0.011695452, w: 0.9644694}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Fore_R_Paw_end
+      parentName: Fore_R_Paw
+      position: {x: -0, y: 0.040792156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hind_R_Upper
+      parentName: Spine
+      position: {x: -0.064, y: -0.028170157, z: 0.0025382354}
+      rotation: {x: 0.66734403, y: 0.66771835, z: -0.24956049, w: 0.2156937}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999997}
+    - name: Hind_R_Lower
+      parentName: Hind_R_Upper
+      position: {x: -0.0000000018626451, y: 0.08514694, z: -0.000000015832484}
+      rotation: {x: -0.0030409843, y: 0.45917156, z: -0.00063306093, w: 0.8883422}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: Hind_R_Paw
+      parentName: Hind_R_Lower
+      position: {x: -0.0000000026775524, y: 0.07890501, z: 0.0000000055879354}
+      rotation: {x: -0.22191402, y: -0.06884035, z: -0.076024115, w: 0.9696574}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hind_R_Paw_end
+      parentName: Hind_R_Paw
+      position: {x: -0, y: 0.040792156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tail_00
+      parentName: Spine
+      position: {x: -6.1118044e-10, y: -0.08083835, z: -0.0052116783}
+      rotation: {x: 0.9977295, y: -0.06677084, z: -0.00021926472, w: 0.008805712}
+      scale: {x: 1.0000014, y: 0.9999998, z: 1.0000001}
+    - name: Tail_01
+      parentName: Tail_00
+      position: {x: -0.0000000012805685, y: 0.043150876, z: -0.000000006628227}
+      rotation: {x: -0.11615112, y: -0.0045558503, z: -0.018426618, w: 0.99305016}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: Tail_02
+      parentName: Tail_01
+      position: {x: -4.0745363e-10, y: 0.053786635, z: 0.000000008047209}
+      rotation: {x: 0.050348748, y: -0.013485118, z: 0.069435336, w: 0.99622387}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: Tail_03
+      parentName: Tail_02
+      position: {x: 0.000000008265488, y: 0.055910613, z: 0.000000002910383}
+      rotation: {x: 0.1074648, y: -0.014777303, z: 0.004110024, w: 0.99409056}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Tail_04
+      parentName: Tail_03
+      position: {x: -0.0000000013969839, y: 0.05657735, z: -0.0000000015133992}
+      rotation: {x: 0.14101933, y: -0.011275432, z: -0.14120597, w: 0.9798201}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tail_05
+      parentName: Tail_04
+      position: {x: -0.0000000011641532, y: 0.07092246, z: -0.0000000016298145}
+      rotation: {x: -0.043681845, y: -0.011135463, z: -0.052333888, w: 0.9976117}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: Tail_05_end
+      parentName: Tail_05
+      position: {x: -0, y: 0.08135111, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: TAIL | riggable tapered skin
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Tail | annular scar 01
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.0036000002, y: 0.2664, z: -0.4572}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Tail | annular scar 02
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.014400001, y: 0.2376, z: -0.549}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Tail | annular scar 03
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.039600004, y: 0.21779999, z: -0.6444}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Tail | annular scar 04
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.053999998, y: 0.21959999, z: -0.7452}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Tail | annular scar 05
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0.036, y: 0.2574, z: -0.86579996}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower -1 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower -1 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower -1 2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower 1 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower 1 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | lower 1 2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper -1 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper -1 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper -1 2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper -1 3
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper 1 0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper 1 1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper 1 2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Teeth | upper 1 3
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | -1_0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | -1_1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | -1_2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | -1_3
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | 1_0
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | 1_1
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | 1_2
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    - name: Whisker | 1_3
+      parentName: Swarmers_Animated(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1.8, y: 1.8, z: 1.8}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,991 @@
+fileFormatVersion: 2
+guid: 5d9b0dbb85876844096b37634a81bfce
+ModelImporter:
+  serializedVersion: 24600
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+    searchTexturesGlobally: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    preBakeConvexCollisionMesh: 0
+    preBakeTriangleCollisionMesh: 0
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    importUVs: -1
+    importVertexColors: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Volt_Leech(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cool rim
+      parentName: Volt_Leech(Clone)
+      position: {x: 2.3, y: 2.5, z: -2}
+      rotation: {x: 0.40504923, y: 0.19440338, z: -0.88898635, w: 0.08857611}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dim emergency fill
+      parentName: Volt_Leech(Clone)
+      position: {x: -1.5, y: 1.5, z: -2.2}
+      rotation: {x: -0.29394606, y: 0.07117576, z: -0.95291543, w: -0.021955581}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Flashlight key
+      parentName: Volt_Leech(Clone)
+      position: {x: -3, y: 3.1, z: 4}
+      rotation: {x: 0.93156564, y: -0.059801057, z: 0.3105219, w: 0.1794031}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_clavicle_conductor
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_electrical_node_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.105, y: 1.48, z: -0.163}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_electrical_node_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.161, y: 1.518, z: -0.13}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_electrical_node_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.217, y: 1.556, z: -0.13}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_embedded_fragment
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.171, y: 1.47, z: -0.12}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_neck_capillary
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_neural_vein_arm_+0.018
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_neural_vein_arm_-0.012
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_nostril
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.033, y: 1.765, z: 0.371}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_pupil
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.065, y: 1.8, z: 0.264}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_recessed_eye
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.065, y: 1.8, z: 0.253}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_scar_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_scar_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_scar_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_sternal_vein
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Preview Camera
+      parentName: Volt_Leech(Clone)
+      position: {x: -3.4, y: 2.35, z: 5}
+      rotation: {x: 0.030859876, y: 0.95047915, z: -0.100262746, w: 0.2925482}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_clavicle_conductor
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_electrical_node_0
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.105, y: 1.48, z: -0.163}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_electrical_node_1
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.161, y: 1.518, z: -0.13}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_electrical_node_2
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.217, y: 1.556, z: -0.13}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_embedded_fragment
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.171, y: 1.47, z: -0.12}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_neck_capillary
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_neural_vein_arm_+0.018
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_neural_vein_arm_-0.012
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_nostril
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.033, y: 1.765, z: 0.371}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_pupil
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.065, y: 1.8, z: 0.264}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_recessed_eye
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.065, y: 1.8, z: 0.253}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_scar_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_scar_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_scar_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_sternal_vein
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_00
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0.96, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_01
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.0136411665, y: 1.006, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_02
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.017800016, y: 1.052, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_03
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.009585628, y: 1.098, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_04
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.0052919695, y: 1.144, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_05
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.016490987, y: 1.19, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_06
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.016226705, y: 1.236, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_07
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.0046828347, y: 1.282, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_08
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.010116192, y: 1.328, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_09
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.0178832, y: 1.374, z: -0.175}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_10
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.013219148, y: 1.42, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_11
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.00063386565, y: 1.466, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_12
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.014046263, y: 1.512, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_13
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.01769475, y: 1.558, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_14
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.009043174, y: 1.604, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spinous_keratin_15
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.00589454, y: 1.65, z: -0.166}
+      rotation: {x: -0.6134314, y: 0, z: -0, w: 0.789748}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_BODY | cohesive skinned mesh
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 1.54, z: -0.055}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hand_claw_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hand_claw_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hand_claw_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hand_claw_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hook_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hook_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hook_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_hook_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_toe_claw_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_toe_claw_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_L_toe_claw_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_RIG | Root at ground
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Root
+      parentName: VL_RIG | Root at ground
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Pelvis
+      parentName: Root
+      position: {x: 0, y: 0.08374447, z: 0}
+      rotation: {x: -0.024976552, y: -0, z: -0, w: 0.9996881}
+      scale: {x: 1, y: 1.0000141, z: 1.0000141}
+    - name: Spine_01
+      parentName: Pelvis
+      position: {x: -0, y: 1.0012492, z: 0.0000000037252903}
+      rotation: {x: -0.027455872, y: -0, z: -0, w: 0.99962306}
+      scale: {x: 1, y: 0.9999903, z: 0.9999903}
+    - name: Spine_02
+      parentName: Spine_01
+      position: {x: -0, y: 0.19104983, z: 0}
+      rotation: {x: 0.024686707, y: -0, z: -0, w: 0.99969524}
+      scale: {x: 1, y: 0.9999986, z: 0.9999986}
+    - name: Chest
+      parentName: Spine_02
+      position: {x: -0, y: 0.1802775, z: -4.656613e-10}
+      rotation: {x: 0.10058509, y: -0, z: -0, w: 0.9949285}
+      scale: {x: 1, y: 0.9999991, z: 0.9999991}
+    - name: Neck
+      parentName: Chest
+      position: {x: -0, y: 0.17182827, z: -0.0000000037252903}
+      rotation: {x: 0.16933711, y: -0, z: -0, w: 0.9855583}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+    - name: Head
+      parentName: Neck
+      position: {x: -0, y: 0.17691785, z: 0.000000055879354}
+      rotation: {x: -0.081442885, y: -0, z: -0, w: 0.99667805}
+      scale: {x: 1, y: 1.0000035, z: 1.0000035}
+    - name: Jaw
+      parentName: Head
+      position: {x: -0, y: 0.13454393, z: -0.004786946}
+      rotation: {x: 0.6200552, y: -0, z: -0, w: 0.78455824}
+      scale: {x: 1, y: 1.0000023, z: 1.0000023}
+    - name: Jaw_end
+      parentName: Jaw
+      position: {x: -0, y: 0.2075235, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Clavicle
+      parentName: Chest
+      position: {x: -0, y: 0.17182827, z: -0.0000000037252903}
+      rotation: {x: -0.5139308, y: 0.51601183, z: 0.44567782, w: 0.52055573}
+      scale: {x: 1.0000055, y: 1.0000168, z: 1.0000066}
+    - name: L_UpperArm
+      parentName: L_Clavicle
+      position: {x: -0.0000000018626451, y: 0.23632604, z: -0.00000006100163}
+      rotation: {x: 0.06893791, y: -0.7597819, z: 0.0038483725, w: -0.64650166}
+      scale: {x: 1.0000029, y: 1.000049, z: 1.0000417}
+    - name: L_ForeArm
+      parentName: L_UpperArm
+      position: {x: -0.000000013038516, y: 0.4502496, z: -0.000000059604645}
+      rotation: {x: -0.0072116326, y: 0.10115546, z: -0.028912028, w: 0.99442434}
+      scale: {x: 0.9999448, y: 1.0000416, z: 1.0000813}
+    - name: L_Hand
+      parentName: L_ForeArm
+      position: {x: -0, y: 0.4096339, z: -0.000000011175871}
+      rotation: {x: -0.15231654, y: -0.028615592, z: 0.03157661, w: 0.98741263}
+      scale: {x: 1.0000978, y: 0.9999669, z: 0.9999715}
+    - name: L_Finger0
+      parentName: L_Hand
+      position: {x: 0.00000004284084, y: 0.11056672, z: -0.000000022351742}
+      rotation: {x: -0.0016103077, y: 0.63853765, z: -0.071986854, w: 0.7662148}
+      scale: {x: 1.0002422, y: 0.9996966, z: 1.0001683}
+    - name: L_Finger0_end
+      parentName: L_Finger0
+      position: {x: -0, y: 0.19238766, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger1
+      parentName: L_Hand
+      position: {x: 0.00000004284084, y: 0.11056672, z: -0.000000022351742}
+      rotation: {x: -0.06419366, y: 0.29339358, z: -0.0411612, w: 0.9529455}
+      scale: {x: 1.0000222, y: 0.99978125, z: 1.0003035}
+    - name: L_Finger1_end
+      parentName: L_Finger1
+      position: {x: -0, y: 0.20110197, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger2
+      parentName: L_Hand
+      position: {x: 0.00000004284084, y: 0.11056672, z: -0.000000022351742}
+      rotation: {x: -0.061201677, y: -0.21532975, z: 0.047210846, w: 0.9734776}
+      scale: {x: 1.0001211, y: 0.99990666, z: 1.000045}
+    - name: L_Finger2_end
+      parentName: L_Finger2
+      position: {x: -0, y: 0.20321664, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger3
+      parentName: L_Hand
+      position: {x: 0.00000004284084, y: 0.11056672, z: -0.000000022351742}
+      rotation: {x: 0.035318665, y: -0.5157838, z: 0.24200521, w: 0.82106835}
+      scale: {x: 1.0002874, y: 1.0000685, z: 0.9997068}
+    - name: L_Finger3_end
+      parentName: L_Finger3
+      position: {x: -0, y: 0.19894221, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Clavicle
+      parentName: Chest
+      position: {x: -0, y: 0.17182827, z: -0.0000000037252903}
+      rotation: {x: 0.6092749, y: 0.49252328, z: 0.42539057, w: -0.45304292}
+      scale: {x: 1.0000188, y: 1.0000211, z: 1.0000253}
+    - name: R_UpperArm
+      parentName: R_Clavicle
+      position: {x: 0.000000022351742, y: 0.23843236, z: 0.00000014109537}
+      rotation: {x: -0.029097801, y: -0.7051926, z: -0.0689292, w: 0.7050571}
+      scale: {x: 1.0000311, y: 1.0000763, z: 1.0000596}
+    - name: R_ForeArm
+      parentName: R_UpperArm
+      position: {x: 0.000000063329935, y: 0.45773885, z: 0.000000007450581}
+      rotation: {x: -0.016354948, y: -0.09268286, z: 0.026290664, w: 0.99521416}
+      scale: {x: 1.0000085, y: 0.99999577, z: 0.9999909}
+    - name: R_Hand
+      parentName: R_ForeArm
+      position: {x: 0.000000018626451, y: 0.3456877, z: 0.00000011175871}
+      rotation: {x: -0.079174325, y: 0.0023979908, z: -0.0091756545, w: 0.9968157}
+      scale: {x: 1.0000106, y: 1.0000432, z: 0.99996763}
+    - name: R_Finger0
+      parentName: R_Hand
+      position: {x: -0.000000013038516, y: 0.12247449, z: -0.000000037252903}
+      rotation: {x: -0.00858399, y: -0.5646005, z: 0.07196481, w: 0.8221763}
+      scale: {x: 0.9995548, y: 1.0001682, z: 1.000297}
+    - name: R_Finger0_end
+      parentName: R_Finger0
+      position: {x: -0, y: 0.2002199, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger1
+      parentName: R_Hand
+      position: {x: -0.000000013038516, y: 0.12247449, z: -0.000000037252903}
+      rotation: {x: -0.06613272, y: -0.24726368, z: 0.03759996, w: 0.9659572}
+      scale: {x: 0.99958855, y: 1.0002455, z: 1.000205}
+    - name: R_Finger1_end
+      parentName: R_Finger1
+      position: {x: -0, y: 0.20860729, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger2
+      parentName: R_Hand
+      position: {x: -0.000000013038516, y: 0.12247449, z: -0.000000037252903}
+      rotation: {x: -0.0639509, y: 0.1858319, z: -0.042750724, w: 0.97956586}
+      scale: {x: 1.0002254, y: 1.000248, z: 0.9995715}
+    - name: R_Finger2_end
+      parentName: R_Finger2
+      position: {x: -0, y: 0.21064663, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger3
+      parentName: R_Hand
+      position: {x: -0.000000013038516, y: 0.12247449, z: -0.000000037252903}
+      rotation: {x: 0.0045616194, y: 0.4651843, z: -0.24364686, w: 0.85101056}
+      scale: {x: 1.0001194, y: 1.0001227, z: 0.99980503}
+    - name: R_Finger3_end
+      parentName: R_Finger3
+      position: {x: -0, y: 0.20652604, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tendril0_0
+      parentName: Chest
+      position: {x: 0.12, y: 0.13894661, z: -0.08613244}
+      rotation: {x: -0.3753901, y: -0.24494272, z: -0.21155618, w: 0.86852133}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000005}
+    - name: Tendril0_1
+      parentName: Tendril0_0
+      position: {x: 0.000000014901161, y: 0.1994994, z: 0.000000037252903}
+      rotation: {x: -0.08893567, y: -0.028692767, z: 0.010545693, w: 0.9955682}
+      scale: {x: 1.0000101, y: 1.0000061, z: 1.0000051}
+    - name: Tendril0_2
+      parentName: Tendril0_1
+      position: {x: 0.000000029802322, y: 0.19052564, z: 0.000000007450581}
+      rotation: {x: 0.5564141, y: 0.16933765, z: -0.09377512, w: -0.80804354}
+      scale: {x: 1.000019, y: 1.0000741, z: 1.0000403}
+    - name: Tendril0_3
+      parentName: Tendril0_2
+      position: {x: -0.000000074505806, y: 0.20663984, z: 0.000000070780516}
+      rotation: {x: -0.016225306, y: -0.032967713, z: 0.09361197, w: 0.99493057}
+      scale: {x: 1.0000168, y: 1.0000091, z: 1.0000154}
+    - name: Tendril0_3_end
+      parentName: Tendril0_3
+      position: {x: -0, y: 0.15524177, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tendril1_0
+      parentName: Chest
+      position: {x: -0.145, y: 0.15675516, z: -0.088751316}
+      rotation: {x: -0.37539014, y: 0.24494274, z: 0.21155627, w: 0.8685213}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000026}
+    - name: Tendril1_1
+      parentName: Tendril1_0
+      position: {x: 0.00000013411045, y: 0.19949937, z: -0.000000014901161}
+      rotation: {x: -0.06264069, y: 0.015251694, z: -0.017679503, w: 0.997763}
+      scale: {x: 1.000002, y: 1.0000007, z: 1.0000087}
+    - name: Tendril1_2
+      parentName: Tendril1_1
+      position: {x: 0.000000029802322, y: 0.19862579, z: -0.00000014156103}
+      rotation: {x: 0.5627412, y: -0.16756022, z: 0.08249507, w: -0.8052581}
+      scale: {x: 1.0000113, y: 1.0000466, z: 1.0000153}
+    - name: Tendril1_3
+      parentName: Tendril1_2
+      position: {x: 0.000000014901161, y: 0.20124675, z: -0.000000074505806}
+      rotation: {x: -0.05708663, y: 0.042665336, z: -0.09897758, w: 0.9925343}
+      scale: {x: 1.0000556, y: 0.9999377, z: 1.0000566}
+    - name: Tendril1_3_end
+      parentName: Tendril1_3
+      position: {x: -0, y: 0.15970682, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tendril2_0
+      parentName: Chest
+      position: {x: 0.12, y: 0.17693813, z: -0.09171942}
+      rotation: {x: -0.37539, y: -0.24494272, z: -0.21155618, w: 0.86852133}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.999999}
+    - name: Tendril2_1
+      parentName: Tendril2_0
+      position: {x: -0.000000074505806, y: 0.19949916, z: -0.000000022351742}
+      rotation: {x: -0.0355682, y: -0.0010658649, z: 0.025742503, w: 0.99903506}
+      scale: {x: 1.0000026, y: 0.9999936, z: 0.9999959}
+    - name: Tendril2_2
+      parentName: Tendril2_1
+      position: {x: -0.000000074505806, y: 0.20848377, z: -0.00000012665987}
+      rotation: {x: 0.5661683, y: 0.16511911, z: -0.069818355, w: -0.8045587}
+      scale: {x: 1.0000201, y: 1.0000654, z: 1.0000169}
+    - name: Tendril2_3
+      parentName: Tendril2_2
+      position: {x: -0.000000014901161, y: 0.19563693, z: -0.000000059604645}
+      rotation: {x: -0.103447385, y: -0.053511906, z: 0.104856454, w: 0.98764384}
+      scale: {x: 1.0000305, y: 1.0000415, z: 0.999999}
+    - name: Tendril2_3_end
+      parentName: Tendril2_3
+      position: {x: -0, y: 0.16503337, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tendril3_0
+      parentName: Chest
+      position: {x: -0.145, y: 0.19474657, z: -0.0943383}
+      rotation: {x: -0.37539014, y: 0.24494274, z: 0.21155627, w: 0.8685213}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000026}
+    - name: Tendril3_1
+      parentName: Tendril3_0
+      position: {x: 0.00000013411045, y: 0.19949937, z: 0.000000044703484}
+      rotation: {x: -0.013926355, y: -0.0105389645, z: -0.03273524, w: 0.9993115}
+      scale: {x: 1.0000038, y: 0.9999996, z: 1.0000068}
+    - name: Tendril3_2
+      parentName: Tendril3_1
+      position: {x: -0, y: 0.21770468, z: 0.00000010430813}
+      rotation: {x: -0.5660675, y: 0.16263922, z: -0.058895845, w: 0.806007}
+      scale: {x: 1.0000191, y: 1.0000454, z: 1.0000095}
+    - name: Tendril3_3
+      parentName: Tendril3_2
+      position: {x: -0.000000029802322, y: 0.19116588, z: 0.00000023469329}
+      rotation: {x: 0.14435852, y: -0.062894806, z: 0.109796, w: -0.981402}
+      scale: {x: 1.0000641, y: 0.999907, z: 1.000095}
+    - name: Tendril3_3_end
+      parentName: Tendril3_3
+      position: {x: -0, y: 0.16994779, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Thigh
+      parentName: Pelvis
+      position: {x: -0.13, y: 0.991761, z: -0.010486897}
+      rotation: {x: 0.9896111, y: -0.051415145, z: -0.10457848, w: 0.084200285}
+      scale: {x: 1, y: 1.0000126, z: 1.0000004}
+    - name: L_Shin
+      parentName: L_Thigh
+      position: {x: 0.000000026077032, y: 0.52668786, z: -0.000000048428774}
+      rotation: {x: 0.32463026, y: 0.061095044, z: -0.06981069, w: 0.94128054}
+      scale: {x: 1.000089, y: 0.9999984, z: 1.0000498}
+    - name: L_Ankle
+      parentName: L_Shin
+      position: {x: -4.656613e-10, y: 0.42863145, z: -0.000000018626451}
+      rotation: {x: -0.6440426, y: 0.010483857, z: 0.03235611, w: 0.7642331}
+      scale: {x: 1.0000076, y: 1.0000517, z: 1.0000116}
+    - name: L_Toe0
+      parentName: L_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: 0.060252927, y: 0.8508777, z: -0.27287614, w: 0.44487688}
+      scale: {x: 1.0000249, y: 1.0002792, z: 0.99978465}
+    - name: L_Toe0_end
+      parentName: L_Toe0
+      position: {x: -0, y: 0.21217681, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe1
+      parentName: L_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: -0.21306841, y: 0.27923727, z: -0.08152219, w: 0.9327285}
+      scale: {x: 0.9998349, y: 1.0003026, z: 0.999898}
+    - name: L_Toe1_end
+      parentName: L_Toe1
+      position: {x: -0, y: 0.23317161, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe2
+      parentName: L_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: 0.011578348, y: 0.76155156, z: -0.24276899, w: -0.6008065}
+      scale: {x: 0.9997829, y: 1.0002645, z: 1.0000225}
+    - name: L_Toe2_end
+      parentName: L_Toe2
+      position: {x: -0, y: 0.20595874, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Thigh
+      parentName: Pelvis
+      position: {x: 0.13, y: 0.991761, z: -0.010486897}
+      rotation: {x: 0.9897174, y: 0.051244475, z: 0.1045248, w: 0.08311504}
+      scale: {x: 1, y: 1.0000126, z: 1.0000004}
+    - name: R_Shin
+      parentName: R_Thigh
+      position: {x: -0.000000026077032, y: 0.52668786, z: -0.000000048428774}
+      rotation: {x: 0.3244097, y: -0.062639825, z: 0.071721055, w: 0.94111145}
+      scale: {x: 1.000089, y: 0.9999984, z: 1.0000498}
+    - name: R_Ankle
+      parentName: R_Shin
+      position: {x: 4.656613e-10, y: 0.42863145, z: -0.000000018626451}
+      rotation: {x: -0.64481926, y: -0.0082557695, z: -0.033690725, w: 0.76354754}
+      scale: {x: 1.0000076, y: 1.0000517, z: 1.0000116}
+    - name: R_Toe0
+      parentName: R_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: -0.060252927, y: 0.8508777, z: -0.27287614, w: -0.44487688}
+      scale: {x: 1.0000249, y: 1.0002792, z: 0.99978465}
+    - name: R_Toe0_end
+      parentName: R_Toe0
+      position: {x: -0, y: 0.21217681, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe1
+      parentName: R_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: -0.21306841, y: -0.27923727, z: 0.08152219, w: 0.9327285}
+      scale: {x: 0.9998349, y: 1.0003026, z: 0.999898}
+    - name: R_Toe1_end
+      parentName: R_Toe1
+      position: {x: -0, y: 0.23317161, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe2
+      parentName: R_Ankle
+      position: {x: -0, y: 0.2511474, z: 0.000000009313226}
+      rotation: {x: -0.011578348, y: 0.76155156, z: -0.24276899, w: 0.6008065}
+      scale: {x: 0.9997829, y: 1.0002645, z: 1.0000225}
+    - name: R_Toe2_end
+      parentName: R_Toe2
+      position: {x: -0, y: 0.20595874, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hand_claw_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hand_claw_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hand_claw_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hand_claw_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hook_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hook_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hook_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_hook_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_toe_claw_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_toe_claw_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_R_toe_claw_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_TENDRIL_0 | flexible tubular mesh
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_TENDRIL_1 | flexible tubular mesh
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_TENDRIL_2 | flexible tubular mesh
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: VL_TENDRIL_3 | flexible tubular mesh
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: embedded_dorsal_node_0
+      parentName: Volt_Leech(Clone)
+      position: {x: -0, y: 1.22, z: -0.159}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: embedded_dorsal_node_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.013980586, y: 1.29, z: -0.159}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: embedded_dorsal_node_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.010131948, y: 1.36, z: -0.159}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: embedded_dorsal_node_3
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.0066378065, y: 1.43, z: -0.159}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: embedded_dorsal_node_4
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.014942469, y: 1.5, z: -0.159}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_0_embedded_root
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.12, y: 1.52, z: -0.145}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_0_junction_1
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.22999999, y: 1.66, z: -0.235}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_0_junction_2
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.34, y: 1.77, z: -0.345}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_0_junction_3
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.43, y: 1.66, z: -0.495}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_0_lit_node
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.34, y: 1.786, z: -0.351}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_1_embedded_root
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.145, y: 1.538, z: -0.145}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_1_junction_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.255, y: 1.678, z: -0.235}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_1_junction_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.365, y: 1.8015, z: -0.345}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_1_junction_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.45499998, y: 1.702, z: -0.495}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_1_lit_node
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.365, y: 1.8175, z: -0.351}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_2_embedded_root
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.12, y: 1.5584, z: -0.145}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_2_junction_1
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.22999999, y: 1.6984, z: -0.235}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_2_junction_2
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.34, y: 1.8372, z: -0.345}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_2_junction_3
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.43, y: 1.7496, z: -0.495}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_2_lit_node
+      parentName: Volt_Leech(Clone)
+      position: {x: 0.34, y: 1.8532001, z: -0.351}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_3_embedded_root
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.145, y: 1.5764, z: -0.145}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_3_junction_1
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.255, y: 1.7164, z: -0.235}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_3_junction_2
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.365, y: 1.8687, z: -0.345}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_3_junction_3
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.45499998, y: 1.7916, z: -0.495}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tendril_3_lit_node
+      parentName: Volt_Leech(Clone)
+      position: {x: -0.365, y: 1.8847001, z: -0.351}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
