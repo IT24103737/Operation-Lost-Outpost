@@ -234,6 +234,8 @@ public sealed partial class FacilityEncounter : MonoBehaviour
             case Species.Leech:
                 Spawn(Species.Leech, new Vector3(7, y, 30));
                 Spawn(Species.Leech, new Vector3(-4, y, 32));
+                Spawn(Species.Leech, new Vector3(9, y, 39));
+                Spawn(Species.Leech, new Vector3(-8, y, 36));
                 break;
             case Species.Stalker:
                 Spawn(Species.Stalker, new Vector3(3, y + 3.62f, 1));

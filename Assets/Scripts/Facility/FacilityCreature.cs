@@ -32,7 +32,7 @@ public sealed class FacilityCreature : MonoBehaviour
         spawn = transform.position;
         (radius, height, maximum, state) = kind switch
         {
-            Species.Goliath => (.64f, 2.55f, 265f, State.Patrol),
+            Species.Goliath => (.64f, 2.55f, 600f, State.Patrol),
             Species.Leech => (.45f, .86f, 110f, State.Evade),
             Species.Stalker => (.55f, .94f, 155f, State.Perch),
             _ => (.23f, .40f, 44f, State.Hunt)
